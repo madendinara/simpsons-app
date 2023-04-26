@@ -13,8 +13,8 @@ protocol ListViewControllerDelegate: class {
 
 class ListViewController : UIViewController, AlertView {
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var Go: UIButton!
-    @IBOutlet weak var CharacterListTableView: UITableView!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backgroundView: UIView!
     
     weak var delegate: ListViewControllerDelegate?
@@ -22,7 +22,7 @@ class ListViewController : UIViewController, AlertView {
     private var CharacterList: [RelatedTopic]? {
         didSet {
             DispatchQueue.main.async {
-                self.CharacterListTableView.reloadData()
+                self.tableView.reloadData()
                 if let firstCharacter = self.CharacterList?[0] {
                     self.delegate?.characterSelected(firstCharacter)
                 }
@@ -40,19 +40,19 @@ class ListViewController : UIViewController, AlertView {
     private func initialSetup() {
         title = SharedInfo.shared.title
         searchBar.delegate = self
-        CharacterListTableView.delegate = self
-        CharacterListTableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
 
-        CharacterListTableView.tableFooterView = UIView()
-        CharacterListTableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.defalultCellIdentifier)
-        Go.addTarget(self, action: #selector(goButton), for: .touchUpInside)
+        tableView.tableFooterView = UIView()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.defalultCellIdentifier)
+        searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.didTapView(_:)))
         backgroundView.addGestureRecognizer(tap)
 
         fetchData()
     }
     
-    @objc fileprivate func goButton() {
+    @objc fileprivate func searchButtonTapped() {
         searchBarSearchButtonClicked(searchBar)
     }
     
@@ -89,7 +89,7 @@ extension ListViewController: UISearchBarDelegate {
               let searchText = text.removeWhiteSpaces(query: text),
               !searchText.isEmpty else {
             searchBar.text = nil
-            self.CharacterListTableView.reloadData()
+            self.tableView.reloadData()
             self.searchBar.resignFirstResponder()
             self.alert(error: Errors.emptySearchBar)
             return
@@ -100,7 +100,7 @@ extension ListViewController: UISearchBarDelegate {
         
         self.fileredList = filter
         
-        self.CharacterListTableView.reloadData()
+        self.tableView.reloadData()
     }
     
     func searchBarIsEmpty() -> Bool {

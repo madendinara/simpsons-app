@@ -15,10 +15,10 @@ extension AlertView {
     func alert(error: Error) {
         var title = "Error"
         var message = error.localizedDescription
-        let cancelAction = UIAlertAction(title: "Okay", style: .cancel)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
 
         
-        if let characterError = error as? appError {
+        if let characterError = error as? Errors {
             message = characterError.message
             title = characterError.title
         }
