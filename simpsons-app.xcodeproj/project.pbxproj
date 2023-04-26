@@ -20,6 +20,8 @@
 		9C14035F29F93B020062695D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14035E29F93B020062695D /* DetailsViewController.swift */; };
 		9C14036129F93B190062695D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14036029F93B190062695D /* ListViewController.swift */; };
 		9C14036629F93B3A0062695D /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14036529F93B3A0062695D /* ListCell.swift */; };
+		9C14036829F93C440062695D /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14036729F93C440062695D /* AlertView.swift */; };
+		9C14036A29F93C720062695D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14036929F93C720062695D /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		9C14035E29F93B020062695D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		9C14036029F93B190062695D /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		9C14036529F93B3A0062695D /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		9C14036729F93C440062695D /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		9C14036929F93C720062695D /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		9C14035429F939A50062695D /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				9C14036929F93C720062695D /* Network.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				9C14036529F93B3A0062695D /* ListCell.swift */,
+				9C14036729F93C440062695D /* AlertView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,7 +207,9 @@
 			files = (
 				9C14034329F938580062695D /* ViewController.swift in Sources */,
 				9C14035D29F93A250062695D /* SplitViewController.swift in Sources */,
+				9C14036A29F93C720062695D /* Network.swift in Sources */,
 				9C14033F29F938580062695D /* AppDelegate.swift in Sources */,
+				9C14036829F93C440062695D /* AlertView.swift in Sources */,
 				9C14036629F93B3A0062695D /* ListCell.swift in Sources */,
 				9C14035F29F93B020062695D /* DetailsViewController.swift in Sources */,
 				9C14035929F939DA0062695D /* SharedInfo.swift in Sources */,

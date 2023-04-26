@@ -13,7 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if let productId = Bundle.main.bundleIdentifier {
+            SharedInfo.shared.app = Type(rawValue: productId.lowercased()) ?? .simpsonsviewer
+        }
         return true
     }
 

@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct CharacterDataModel: Codable {
+struct Character: Codable {
     let heading: String?
     let relatedTopics: [RelatedTopic]?
 

@@ -48,7 +48,7 @@ class DetailsViewController: UIViewController {
     }
 }
 
-extension DetailsViewController: CharacterSelectionDelegate {
+extension DetailsViewController: ListViewControllerDelegate {
   func characterSelected(_ selectedCharacter: RelatedTopic) {
     character = selectedCharacter
   }

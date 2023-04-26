@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AppType: String {
+enum Type: String {
     case wire = "com.vineelgolla.simpsonsviewer.pro"
     case simpsonsviewer = "com.vineelgolla.simpsonsviewer"
 }
@@ -19,7 +19,7 @@ class SharedInfo {
     var title = ""
     var url = ""
     
-    var app: AppType? {
+    var app: Type? {
         didSet {
             switch app {
             case .wire:
